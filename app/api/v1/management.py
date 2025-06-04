@@ -9,4 +9,4 @@ async def load_data_all_data():
     Download e carrega todos os dados do site da Embrapa Vinho para o banco de dados.
     """
     statuses = download_all()
-    return {"status": "Data loaded successfully", "details": statuses}
+    return {"status": "Dados carregados com sucesso", "details": statuses}
