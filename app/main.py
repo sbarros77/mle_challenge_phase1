@@ -4,7 +4,7 @@ from app.api.v1 import comercializacao, exportacao, importacao, processamento, p
 
 app = FastAPI(
     title="Embrapa vinicultura API",
-    description="API para gerenciar o processamento de dados de importação, comercialização e outros.",
+    description="API para gerenciar importação, exportação, comercialização e produção de uvas, vinhos e derivados.",
     version="1.0.0",
 )
 
