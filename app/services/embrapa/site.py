@@ -21,7 +21,7 @@ EXPORTACAO_SUCO_DE_UVA_URL: str = "http://vitibrasil.cnpuv.embrapa.br/download/E
 data_sources = [
     {
         "source": "Producao",
-        "target": "stg_producao",
+        "target": "tb_producao",
         "url": PRODUCAO_URL,
         "delimiter": ";",
         "has_header": True,
@@ -30,7 +30,7 @@ data_sources = [
     },
     {
         "source": "Processamento Viniferas",
-        "target": "stg_processamento",
+        "target": "tb_processamento",
         "url": PROCESSAMENTO_VINIFERAS_URL,
         "delimiter": ";",
         "has_header": True,
@@ -39,7 +39,7 @@ data_sources = [
     },
     {
         "source": "Processamento Americanas",
-        "target": "stg_processamento",
+        "target": "tb_processamento",
         "url": PROCESSAMENTO_AMERICANAS_URL,
         "delimiter": "\t",
         "has_header": True,
@@ -48,7 +48,7 @@ data_sources = [
     },
     {
         "source": "Processamento Uvas Mesa",
-        "target": "stg_processamento",
+        "target": "tb_processamento",
         "url": PROCESSAMENTO_UVAS_MESA_URL,
         "delimiter": "\t",
         "has_header": True,
@@ -57,7 +57,7 @@ data_sources = [
     },
     {
         "source": "Processamento Sem Classificacao",
-        "target": "stg_processamento",
+        "target": "tb_processamento",
         "url": PROCESSAMENTO_SEM_CLASSIFICACAO_URL,
         "delimiter": "\t",
         "has_header": True,
@@ -66,7 +66,7 @@ data_sources = [
     },
     {
         "source": "Comercializacao",
-        "target": "stg_comercializacao",
+        "target": "tb_comercializacao",
         "url": COMERCIALIZACAO_URL,
         "delimiter": ";",
         "has_header": True,
@@ -75,7 +75,7 @@ data_sources = [
     },
     {
         "source": "Importacao Vinho Mesa",
-        "target": "stg_importacao",
+        "target": "tb_importacao",
         "url": IMPORTACAO_VINHO_MESA_URL,
         "delimiter": "\t",
         "has_header": True,
@@ -84,7 +84,7 @@ data_sources = [
     },
     {
         "source": "Importacao Espumantes",
-        "target": "stg_importacao",
+        "target": "tb_importacao",
         "url": IMPORTACAO_ESPUMANTES_URL,
         "delimiter": "\t",
         "has_header": True,
@@ -93,7 +93,7 @@ data_sources = [
     },
     {
         "source": "Importacao Uvas Frescas",
-        "target": "stg_importacao",
+        "target": "tb_importacao",
         "url": IMPORTACAO_UVAS_FRESCAS_URL,
         "delimiter": "\t",
         "has_header": True,
@@ -102,7 +102,7 @@ data_sources = [
     },
     {
         "source": "Importacao Uvas Passas",
-        "target": "stg_importacao",
+        "target": "tb_importacao",
         "url": IMPORTACAO_UVAS_PASSAS_URL,
         "delimiter": "\t",
         "has_header": True,
@@ -111,7 +111,7 @@ data_sources = [
     },
     {
         "source": "Importacao Suco de Uva",
-        "target": "stg_importacao",
+        "target": "tb_importacao",
         "url": IMPORTACAO_SUCO_DE_UVA_URL,
         "delimiter": ";",
         "has_header": True,
@@ -120,7 +120,7 @@ data_sources = [
     },
     {
         "source": "Exportacao Vinho Mesa",
-        "target": "stg_exportacao",
+        "target": "tb_exportacao",
         "url": EXPORTACAO_VINHO_MESA_URL,
         "delimiter": "\t",
         "has_header": True,
@@ -129,7 +129,7 @@ data_sources = [
     },
     {
         "source": "Exportacao Espumantes",
-        "target": "stg_exportacao",
+        "target": "tb_exportacao",
         "url": EXPORTACAO_ESPUMANTES_URL,
         "delimiter": "\t",
         "has_header": True,
@@ -138,7 +138,7 @@ data_sources = [
     },
     {
         "source": "Exportacao Uvas Frescas",
-        "target": "stg_exportacao",
+        "target": "tb_exportacao",
         "url": EXPORTACAO_UVAS_FRESCAS_URL,
         "delimiter": "\t",
         "has_header": True,
@@ -147,7 +147,7 @@ data_sources = [
     },
     {
         "source": "Exportacao Suco de Uva",
-        "target": "stg_exportacao",
+        "target": "tb_exportacao",
         "url": EXPORTACAO_SUCO_DE_UVA_URL,
         "delimiter": "\t",
         "has_header": True,

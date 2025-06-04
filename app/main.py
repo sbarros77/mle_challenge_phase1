@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from app.api import v1
+from app.api.v1 import comercializacao, exportacao, importacao, processamento, producao, management
 
 app = FastAPI(
     title="Embrapa vinicultura API",
@@ -8,14 +8,12 @@ app = FastAPI(
     version="1.0.0",
 )
 
-app.include_router(v1.processamento.router, prefix="/api/v1", tags=["Processamento"])
-app.include_router(v1.importacao.router, prefix="/api/v1", tags=["Importação"])
-app.include_router(
-    v1.comercializacao.router, prefix="/api/v1", tags=["Comercialização"]
-)
-app.include_router(v1.exportacao.router, prefix="/api/v1", tags=["Exportação"])
-app.include_router(v1.producao.router, prefix="/api/v1", tags=["Produção"])
-app.include_router(v1.management.router, prefix="/api/v1", tags=["Management"])
+app.include_router(processamento.router, prefix="/api/v1", tags=["Processamento"])
+app.include_router(importacao.router, prefix="/api/v1", tags=["Importação"])
+app.include_router(comercializacao.router, prefix="/api/v1", tags=["Comercialização"])
+app.include_router(exportacao.router, prefix="/api/v1", tags=["Exportação"])
+app.include_router(producao.router, prefix="/api/v1", tags=["Produção"])
+app.include_router(management.router, prefix="/api/v1", tags=["Management"])
 
 
 @app.get("/")

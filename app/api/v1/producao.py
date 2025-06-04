@@ -1,19 +1,24 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
+from sqlalchemy import column, text
+from app.db.connections import get_session
+from sqlalchemy.orm import Session
+
 
 router = APIRouter()
 
 
-@router.get("/producao")
-async def get_producao(limit: int = 100, offset: int = 0):
+@router.get("/producao/{ano}")
+async def get_producao_by_id(ano: str, db: Session = Depends(get_session), limit: int = 100, offset: int = 0):
     """
-    Endpoint to retrieve production data.
+    Retorna dados de producao por ano
     """
-    return {"message": "Produção data retrieved successfully."}
-
-
-@router.get("/producao/{id}")
-async def get_producao_by_id(id: int):
-    """
-    Endpoint to retrieve production data by ID.
-    """
-    return {"message": f"Produção data for ID {id} retrieved successfully."}
+    field: str = f"y{ano}"
+    statement: str = f"""SELECT id, produto, {field} 
+                            FROM vitivinicultura.tb_producao
+                           WHERE {field} > 0   
+                        ORDER BY produto
+                         LIMIT {limit} OFFSET {offset}"""
+    results = db.execute(text(statement)).fetchall()
+    # Convert to list of dicts for JSON serialization
+    response = [{"id": row[0], "produto": row[1], "litros": row[2], "ano": ano} for row in results]
+    return response

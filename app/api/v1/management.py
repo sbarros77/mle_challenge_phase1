@@ -1,21 +1,12 @@
-from typing import Optional
 from fastapi import APIRouter
-
+from app.services.embrapa.downloader import download_all
 router = APIRouter()
 
 
-@router.post("/load_data/{load_type}")
-async def load_data(load_type: Optional[str]):
+@router.post("/load_all_data/")
+async def load_data_all_data():
     """
-    Endpoint to load data based on the specified load type.
-
-    Args:
-        load_type (str): The type of data to load (e.g., 'importacao', 'comercializacao').
-
-    Returns:
-        dict: A message indicating the status of the data loading process.
+    Download e carrega todos os dados do site da Embrapa Vinho para o banco de dados.
     """
-    if not load_type:
-        return {"message": "Loading all data."}
-
-    return {"message": f"Data loading for {load_type} initiated."}
+    statuses = download_all()
+    return {"status": "Data loaded successfully", "details": statuses}
